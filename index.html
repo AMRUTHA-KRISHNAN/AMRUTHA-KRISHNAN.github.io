@@ -10,58 +10,96 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            min-height: 100vh;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 25px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transform: perspective(1px) translateZ(0);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased leading-relaxed transition-colors duration-300">
+<body class="text-gray-800 antialiased leading-relaxed">
 
     <!-- Main Container -->
-    <div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
 
         <!-- Header Section -->
-        <header class="text-center mb-12">
-            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+        <header class="text-center mb-16">
+            <h1 class="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900 drop-shadow-md">
                 Amrutha Krishnan
             </h1>
-            <p class="mt-2 text-lg text-gray-600">
+            <p class="mt-4 text-xl text-gray-700">
                 BTech Student at Vidya Academy of Science and Technology
             </p>
-            <p class="mt-1 text-sm text-gray-500">
-                From Thrissur, Kerala, India
+            <p class="mt-2 text-md text-gray-600">
+                Thrissur, Kerala, India
             </p>
         </header>
 
         <!-- About Section -->
-        <section class="bg-white rounded-lg shadow-xl p-8 sm:p-10 mb-12">
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-4 text-gray-800">About Me</h2>
-            <p class="text-gray-600 leading-relaxed">
+        <section class="card p-8 sm:p-12 mb-12">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-6 text-gray-800">About Me</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
                 As a BTech student at Vidya Academy of Science and Technology, I am passionate about [Your Field of Interest, e.g., computer science, electronics, etc.]. I enjoy solving complex problems and am constantly learning new technologies. My goal is to apply my knowledge and skills to create innovative solutions that make a positive impact.
             </p>
-            <p class="mt-4 text-gray-600 leading-relaxed">
+            <p class="mt-4 text-lg text-gray-600 leading-relaxed">
                 This space is for you to describe your skills, interests, and professional aspirations in more detail. You can talk about your favorite programming languages, projects you've worked on, or even your hobbies.
             </p>
         </section>
 
+        <!-- Skills Section -->
+        <section class="card p-8 sm:p-12 mb-12">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-6 text-gray-800">My Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 bg-gray-100 rounded-lg shadow-inner">
+                    <p class="font-medium text-gray-700">Programming (e.g., Python, Java)</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg shadow-inner">
+                    <p class="font-medium text-gray-700">Web Development (e.g., HTML, CSS, JS)</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg shadow-inner">
+                    <p class="font-medium text-gray-700">Database Management (e.g., SQL)</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg shadow-inner">
+                    <p class="font-medium text-gray-700">Data Structures & Algorithms</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact/Links Section -->
-        <section class="bg-white rounded-lg shadow-xl p-8 sm:p-10 text-center">
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800">Connect with Me</h2>
+        <section class="card p-8 sm:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-8 text-gray-800">Connect with Me</h2>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
                 <!-- Placeholder for social links -->
-                <a href="#" class="px-6 py-3 rounded-full text-white bg-blue-500 hover:bg-blue-600 transition-colors duration-300 shadow-md">
-                    <span class="font-medium">LinkedIn</span>
+                <a href="#" class="btn px-8 py-4 rounded-full text-white font-medium bg-blue-500 hover:bg-blue-600 shadow-lg">
+                    LinkedIn
                 </a>
-                <a href="#" class="px-6 py-3 rounded-full text-white bg-gray-700 hover:bg-gray-800 transition-colors duration-300 shadow-md">
-                    <span class="font-medium">GitHub</span>
+                <a href="#" class="btn px-8 py-4 rounded-full text-white font-medium bg-gray-700 hover:bg-gray-800 shadow-lg">
+                    GitHub
                 </a>
-                <a href="mailto:your.email@example.com" class="px-6 py-3 rounded-full text-white bg-red-500 hover:bg-red-600 transition-colors duration-300 shadow-md">
-                    <span class="font-medium">Email</span>
+                <a href="mailto:your.email@example.com" class="btn px-8 py-4 rounded-full text-white font-medium bg-red-500 hover:bg-red-600 shadow-lg">
+                    Email
                 </a>
             </div>
             <p class="mt-8 text-gray-500 text-sm">
                 Remember to replace the '#' with your actual profile URLs and 'your.email@example.com' with your email address.
             </p>
         </section>
-
     </div>
 
 </body>
